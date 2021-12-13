@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('/auth/login');
 });
 
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/admin', function () {
+      return view('admin.dashboard');
+    })->name('dashboard');
+  });
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -39,4 +45,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     Route::get('/{applications}', \App\Http\Controllers\ApplicationController::class)->name('application');
 // });
 
-Route::get('/{applications}', 'App\Http\Controllers\ApplicationController@index')->name('index');
+Route::get('/applications', 'App\Http\Controllers\ApplicationController@index')->name('index');
+
