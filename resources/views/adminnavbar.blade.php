@@ -30,7 +30,7 @@
                 </a>
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('applications') }}">View Candidate</span></a>
+                    <a class="nav-link" href="{{ url('applications') }}">Approve Candidate</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ url('/admin/candidateinfo') }}">Candidate Information</span></a>
