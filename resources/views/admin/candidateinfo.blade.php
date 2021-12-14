@@ -18,7 +18,7 @@
                                 <tr>
                                     <th >No.</th>
                                     <th >Name</th>
-                                    <th >Matric Number</th>
+                                    <th >Matric Numberr</th>
                                     <th >Strength</th>
                                     <th >CGPA</th>
                                     <th >Faculty</th>
