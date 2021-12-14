@@ -53,6 +53,6 @@ Route::get('/applications', 'App\Http\Controllers\ApplicationController@index')-
 
 Route::resource('candidate','App\Http\Controllers\candidateListController');
 
-Route::get('/candidate', 'App\Http\Controllers\candidateListController@index')->name('index');
+Route::get('/admin/candidateinfo', 'App\Http\Controllers\candidateListController@index')->name('index');
 
 

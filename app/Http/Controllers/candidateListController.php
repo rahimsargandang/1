@@ -28,10 +28,18 @@ class candidateListController extends Controller
     public function index()
     {
 
-            $candidate_lists = CandidateList::all();
-            return view('candidate.index')->with(compact('candidate_lists'));
+            $candidate_lists=CandidateList::all();
+            return view('admin.candidateinfo')->with(compact('candidate_lists'));
 
 
     }
+
+    // public function show($id)
+    // {
+    //     //
+    //     $candidate_lists = CandidateList::find($id);
+    //     return view('candidate.index')->with(compact('candidate_lists'));
+    // }
+
 
 }
