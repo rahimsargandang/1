@@ -2,34 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CandidateList;
 use Illuminate\Http\Request;
-use App\models\CandidateList;
+
 
 class candidateListController extends Controller
 {
-    public function submitItem(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
+
             'name' => 'required',
             'matricnum' => 'required',
             'strength' => 'required',
-            'cgpa' => 'required',
+            'cgpa' => 'required',  
             'faculty' => 'required',
+                
         ]);
         
         CandidateList::create($request->all());
 
-        return redirect('applications');
+            return redirect ('applications');
     }
     
 }
 
 /** 
-$newCandidateList = new CandidateList;
-$newCandidateList->name = $request->candidateList;
-$newCandidateList->matricnum = $request ->candidateList;
-$newCandidateList->strength = $request ->candidateList;
-$newCandidateList->cgpa = $request -> candidateList;
-$newCandidateList->faculty = $request ->candidateList;
-$newCandidateList->save();
+'name' => 'required',
+'matricnum' => 'required',
+'strength' => 'required',
+'cgpa' => 'required',
+'faculty' => 'required',
 */

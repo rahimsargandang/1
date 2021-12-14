@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CandidateList extends Model
 {
     
+        use HasFactory;
         protected $table = 'candidate_lists';
         protected $fillable = [
             'name',

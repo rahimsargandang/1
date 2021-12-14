@@ -12,14 +12,14 @@
 <body>
 
 
-<form method ="post" action="/submitItem" accept-charset="UTF-8">
+<form method ="post" action="{{ route('candidate.store') }}">
   {{ csrf_field() }}
+
   <div class="container">
   <div class="row justify-content-center">
         <div class="col-md-8">
-  <div class="card">
-    <div class="card-header">{{ __('Candidate Application') }}</div>
-
+<div class="card">
+<div class="card-header">{{ __('Candidate Application') }}</div>
     <div class="row justify-content-center ">
         <div class="col-md-5">
 
@@ -34,7 +34,7 @@
   </div>
   <div class="form-group pt-2">
     <label for="candidatestrength">Strength</label>
-    <textarea class="form-control" style="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" rows="3" ></textarea>
+    <textarea class="form-control" style="" class="form-control" id="strength" name="strength" rows="3" ></textarea>
 
   </div>
   <div class="form-group pt-2">
@@ -45,25 +45,17 @@
 
   <div class="form-group pt-2">
                             <label class="my-1 me-2" for="faculty">Faculty</label>
-                            <select class="form-select" id="faculty" aria-label="Default select example">
+                            <select class="form-select" id="faculty" name="faculty" >
                                 <option selected>Select Faculty</option>
                                 <option value="FTSM">FTSM</option>
                                 <option value="FSK">FSK</option>
                                 <option value="FEB">FEB</option>
                             </select>
-                        </div>
+                        
                         <div class="row mb-6 pt-2 pb-2" >
                             <div class="col-md-8 offset-md-5">
   <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
 
-  </div>
-  </div>
-  </div>
 </form>
 </body>
 </html>

@@ -20,6 +20,7 @@ class CreateCandidateListsTable extends Migration
             $table->string('strength');
             $table->integer('cgpa');
             $table->string('faculty');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

@@ -51,7 +51,7 @@ Route::get('/admin/candidateinfo', 'App\Http\Controllers\AdminController@cinfo')
 Route::get('/applications', 'App\Http\Controllers\ApplicationController@index')->name('index');
 
 
-Route::post('/submitItem', 'App\Http\Controllers\candidateListController@submitItem')->name('submitItem');
+Route::resource('candidate','App\Http\Controllers\candidateListController');
 
 
 
