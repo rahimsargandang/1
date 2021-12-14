@@ -11,23 +11,20 @@
 </head>
 <body>
 
+
 <form method ="post" action="/submitItem" accept-charset="UTF-8">
   {{ csrf_field() }}
-<div class="container">
-
-<form>
   <div class="container">
   <div class="row justify-content-center">
         <div class="col-md-8">
-<div class="card">
-<div class="card-header">{{ __('Candidate Application') }}</div>
+  <div class="card">
+    <div class="card-header">{{ __('Candidate Application') }}</div>
 
     <div class="row justify-content-center ">
         <div class="col-md-5">
 
   <div class="form-group pt-2">
     <label for="candidateapplicationname">Name</label>
-
     <input type="text" class="form-control" id="name"  name ="name"placeholder="Name">
 
   </div>
@@ -37,7 +34,6 @@
   </div>
   <div class="form-group pt-2">
     <label for="candidatestrength">Strength</label>
-
     <textarea class="form-control" style="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" rows="3" ></textarea>
 
   </div>
@@ -60,14 +56,14 @@
                             <div class="col-md-8 offset-md-5">
   <button type="submit" class="btn btn-primary">Submit</button>
   </div>
-</div>
-</div>
-</div>
-</div>
-  
-</div>
-</div>
-</div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  </div>
+  </div>
+  </div>
 </form>
 </body>
 </html>
