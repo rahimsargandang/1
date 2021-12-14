@@ -16,6 +16,11 @@ class AdminController extends Controller
         return view('admin.login');
     }
 
+    public function cinfo()
+    {
+        return view('admin.candidateinfo');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

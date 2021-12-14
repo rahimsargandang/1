@@ -25,7 +25,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('home') }}">
+                <a class="navbar-brand" href="{{ url('/admin') }}">
                     {{ config('app.name', 'UKMVote') }}
                 </a>
                 <ul class="navbar-nav mr-auto">
@@ -33,7 +33,7 @@
                     <a class="nav-link" href="{{ url('applications') }}">View Candidate</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('applications') }}">Candidate Information</span></a>
+                    <a class="nav-link" href="{{ url('/admin/candidateinfo') }}">Candidate Information</span></a>
                 </li>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('/auth/login');
 });
 
+
+
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/admin', function () {
       return view('admin.dashboard');
@@ -44,11 +46,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::middleware('auth')->group(function () {
 //     Route::get('/{applications}', \App\Http\Controllers\ApplicationController::class)->name('application');
 // });
+Route::get('/admin/candidateinfo', 'App\Http\Controllers\AdminController@cinfo')->name('candidateinfo');
 
-Route::get('/{applications}', 'App\Http\Controllers\ApplicationController@index')->name('index');
+Route::get('/applications', 'App\Http\Controllers\ApplicationController@index')->name('index');
+
 
 Route::post('/submitItem', 'App\Http\Controllers\candidateListController@submitItem')->name('submitItem');
 
-Route::get('/applications', 'App\Http\Controllers\ApplicationController@index')->name('index');
+
 
 
