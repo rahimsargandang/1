@@ -18,9 +18,10 @@
                                 <tr>
                                     <th >No.</th>
                                     <th >Name</th>
+                                    <th >Matric Number</th>
+                                    <th >Strength</th>
                                     <th >CGPA</th>
-                                    <th >Email Address</th>
-                                    <th >Status</th>
+                                    <th >Faculty</th>
 
                                 </tr>
                                 </thead>
