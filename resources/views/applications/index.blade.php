@@ -30,9 +30,6 @@
 
     <input type="text" class="form-control" id="name"  name ="name"placeholder="Name">
 
-    <br>
-    <input type="text" class="form-control" id="candidateapplicationname"  placeholder="Name">
-
   </div>
   <div class="form-group pt-2">
     <label for="candidateapplicationmatricnum">Matric Number</label>
@@ -41,7 +38,6 @@
   <div class="form-group pt-2">
     <label for="candidatestrength">Strength</label>
 
-    <input type="text" style="height:100px" class="form-control" id="strength" name ="strength" aria-describedby="emailHelp" >
     <textarea class="form-control" style="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" rows="3" ></textarea>
 
   </div>
@@ -50,12 +46,10 @@
     <input type="text" class="form-control" id="cgpa" name ="cgpa" placeholder="CGPA">
   </div>
 
-  <div class="form-group">
-                            <label class="my-1 me-2" for="faculty">Faculty</label>
-                            <select class="form-select" id="faculty" name ="faculty" aria-label="Default select example">
+
   <div class="form-group pt-2">
-                            <label class="my-1 me-2" for="country">Faculty</label>
-                            <select class="form-select" id="country" aria-label="Default select example">
+                            <label class="my-1 me-2" for="faculty">Faculty</label>
+                            <select class="form-select" id="faculty" aria-label="Default select example">
                                 <option selected>Select Faculty</option>
                                 <option value="FTSM">FTSM</option>
                                 <option value="FSK">FSK</option>
