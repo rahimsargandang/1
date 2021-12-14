@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\candidateListController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,5 +45,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     Route::get('/{applications}', \App\Http\Controllers\ApplicationController::class)->name('application');
 // });
 
+Route::get('/{applications}', 'App\Http\Controllers\ApplicationController@index')->name('index');
+
+Route::post('/submitItem', 'App\Http\Controllers\candidateListController@submitItem')->name('submitItem');
+
 Route::get('/applications', 'App\Http\Controllers\ApplicationController@index')->name('index');
+
 
