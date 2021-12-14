@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CandidateList;
 use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
@@ -20,7 +21,8 @@ class ApplicationController extends Controller
     public function index()
     {
         //
-        return view('applications.index');
+        $candidate_lists = CandidateList::all();
+        return view('application.index')->with(compact('candidate_lists'));
     }
 
     /**

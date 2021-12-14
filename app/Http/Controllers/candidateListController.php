@@ -25,12 +25,13 @@ class candidateListController extends Controller
             return redirect ('applications');
     }
     
-}
+    public function index()
+    {
 
-/** 
-'name' => 'required',
-'matricnum' => 'required',
-'strength' => 'required',
-'cgpa' => 'required',
-'faculty' => 'required',
-*/
+            $candidate_lists = CandidateList::all();
+            return view('candidate.index')->with(compact('candidate_lists'));
+
+
+    }
+
+}
