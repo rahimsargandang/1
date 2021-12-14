@@ -22,7 +22,7 @@ class ApplicationController extends Controller
     {
         //
         $candidate_lists = CandidateList::all();
-        return view('application.index')->with(compact('candidate_lists'));
+        return view('applications.index')->with(compact('candidate_lists'));
     }
 
     /**
