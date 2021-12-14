@@ -21,6 +21,11 @@ class AdminController extends Controller
         return view('admin.candidateinfo');
     }
 
+    public function appcandidate()
+    {
+        return view('admin.approvecandidate');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

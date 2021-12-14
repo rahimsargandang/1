@@ -47,6 +47,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     Route::get('/{applications}', \App\Http\Controllers\ApplicationController::class)->name('application');
 // });
 Route::get('/admin/candidateinfo', 'App\Http\Controllers\AdminController@cinfo')->name('candidateinfo');
+Route::get('/admin/approvecandidate', 'App\Http\Controllers\AdminController@appcandidate')->name('approvecandidate');
 
 Route::get('/applications', 'App\Http\Controllers\ApplicationController@index')->name('index');
 
