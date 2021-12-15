@@ -54,6 +54,8 @@
                         
                         <div class="row mb-6 pt-2 pb-2" >
                             <div class="col-md-8 offset-md-5">
+                            
+<input type="hidden" name="status" id="status" value="WIP" />                            
   <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>

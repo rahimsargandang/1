@@ -17,6 +17,7 @@ class candidateListController extends Controller
             'strength' => 'required',
             'cgpa' => 'required',  
             'faculty' => 'required',
+            'status' => 'required'
                 
         ]);
         
@@ -34,12 +35,22 @@ class candidateListController extends Controller
 
     }
 
-    // public function show($id)
-    // {
-    //     //
-    //     $candidate_lists = CandidateList::find($id);
-    //     return view('candidate.index')->with(compact('candidate_lists'));
-    // }
+    public function approved($id)
+    {
+        //
+        $candidate_lists=CandidateList::find($id);
+        $candidate_lists->status='Approved';
+        $candidate_lists->save();
+        return redirect()->back();
+    }
 
+    public function rejected($id)
+    {
+        //
+        $candidate_lists=CandidateList::find($id);
+        $candidate_lists->status='Rejected';
+        $candidate_lists->save();
+        return redirect()->back();
+    }
 
 }

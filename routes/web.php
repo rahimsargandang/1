@@ -55,4 +55,6 @@ Route::resource('candidate','App\Http\Controllers\candidateListController');
 
 Route::get('/admin/candidateinfo', 'App\Http\Controllers\candidateListController@index')->name('index');
 
+Route::get('/approved/{id}', 'App\Http\Controllers\candidateListController@approved')->name('approved');
 
+Route::get('/rejected/{id}', 'App\Http\Controllers\candidateListController@rejected')->name('rejected');

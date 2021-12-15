@@ -16,6 +16,7 @@ class CandidateList extends Model
             'strength',
             'cgpa',
             'faculty',
+            'status'
         ];
     
 }
