@@ -25,34 +25,19 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Stiphen Mark</td>
-                                    <td>4.00</td>
-                                    <td>stiphen@mail.com</td>
-                                    <td><span class="">Approved</span></td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Yamini padal</td>
-                                    <td>4.00</td>
-                                    <td>yamini@mail.com</td>
-                                    <td>
-                                        <span class="">Pending</span></td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Lois mary</td>
-                                    <td>4.00</td>
-                                    <td>loismary@mail.com</td>
-                                    <td><span class="">Rejected</span>  </td>
-
-                                </tr>
-                                </tbody>
+                            @foreach ($candidate_approved as $show)
+                                    <tr>
+                                        <td>{{ $show->id}}</td>
+                                        <td>{{ $show->name}}</td>
+                                        <td>{{ $show->matricnum}}</td>
+                                        <td>{{ $show->strength}}</td>
+                                        <td>{{ $show->cgpa}}</td>
+                                        <td>{{ $show->faculty}}</td>
+                                        <td>{{ $show->status}}</td>
+                                       
+                                    </tr>
+                                @endforeach
+                            </tbody>
                             </table>
                             </div>
                         </div>

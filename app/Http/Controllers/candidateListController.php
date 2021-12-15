@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CandidateList;
 use Illuminate\Http\Request;
+use DB;
 
 
 class candidateListController extends Controller
@@ -29,7 +30,7 @@ class candidateListController extends Controller
     public function index()
     {
 
-            $candidate_lists=CandidateList::all();
+            $candidate_lists=DB::table('candidate_lists')->where('status', '=', "Pending")->get();;
             return view('admin.candidateinfo')->with(compact('candidate_lists'));
 
 
@@ -51,6 +52,15 @@ class candidateListController extends Controller
         $candidate_lists->status='Rejected';
         $candidate_lists->save();
         return redirect()->back();
+    }
+
+    public function appcandidate()
+    {
+
+            $candidate_approved=DB::table('candidate_lists')->where('status', '=', "Approved")->get();;
+            return view('admin.approvecandidate')->with(compact('candidate_approved'));
+
+
     }
 
 }
