@@ -2,7 +2,8 @@
 
 @section('content')
 
-<div class="row justify-content-center"> Approve Candidate </div>
+<div class="row justify-content-center">Candidate Information </div>
+<br>
 <div class="container">
 <div class="container">
 <div class="row justify-content-center">
@@ -23,9 +24,6 @@
                                     <th >CGPA</th>
                                     <th >Faculty</th>
                                     <th >Status</th>
-                                    <th >Approve</th>
-                                    <th >Reject</th>
-
                                 </tr>
                                 </thead>
                             <tbody>
@@ -38,12 +36,7 @@
                                         <td>{{ $candidateshow->cgpa}}</td>
                                         <td>{{ $candidateshow->faculty}}</td>
                                         <td>{{ $candidateshow->status}}</td>
-                                        <td>
-                                            <a class="btn btn-success" href="{{url('approved',$candidateshow->id)}}">Approve </a>
-                                        </td>
-                                        <td>
-                                            <a class="btn btn-danger" href="{{url('rejected',$candidateshow->id)}}">Reject </a>
-                                        </td>
+
                                     </tr>
                                 @endforeach
                             </tbody>
