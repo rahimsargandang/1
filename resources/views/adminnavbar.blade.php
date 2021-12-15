@@ -26,8 +26,8 @@
         <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background-color: #e3f2fd;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/admin') }}">
-                <img  src="https://cdn.discordapp.com/attachments/702060431577055273/920661038410637382/Sport_Equipment_Store_Logo_Generated_With_Illustration_Of_Mountain_1.png" width="100"  >  
-                {{ config('app.name', 'UKMVote') }}
+                <img  src="https://cdn.discordapp.com/attachments/702060431577055273/920662998513762304/Sport_Equipment_Store_Logo_Generated_With_Illustration_Of_Mountain_2_1.png" width="200" height="50"  >  
+                
                 </a>
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">

@@ -1,7 +1,7 @@
 @extends('adminnavbar')
 
 @section('content')
-<div class="row justify-content-center">Candidate Information</div>
+<div class="row justify-content-center"></div>
 <br>
 <div class="container">
 <div class="container">
@@ -10,9 +10,10 @@
                     <div class="col-md-10col-3">
 
                         <div class="card">
+                        <div class="card-header row justify-content-center">{{ __('Candidate Information') }}</div>   
                         
                             <div class="table-responsive">
-                            <table class="table ">
+                            <table class="table table-bordered">
                                 <thead class="table-light">
 
                                 <tr>
