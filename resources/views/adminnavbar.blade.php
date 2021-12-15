@@ -30,10 +30,10 @@
                 </a>
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/admin/approvecandidate') }}">Approve Candidate</span></a>
+                    <a class="nav-link" href="{{ url('/admin/approvecandidate') }}">Candidate Information</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/admin/candidateinfo') }}">Candidate Information</span></a>
+                    <a class="nav-link" href="{{ url('/admin/candidateinfo') }}">Approve Candidate</span></a>
                 </li>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
