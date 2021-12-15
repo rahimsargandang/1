@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="row justify-content-center">Approve Candidate </div>
+<br>
 <div class="container">
 <div class="container">
 <div class="row justify-content-center">
@@ -17,10 +18,12 @@
                                 <tr>
                                     <th class="border-top-0" scope="col">No.</th>
                                     <th class="border-top-0" scope="col">Name</th>
+                                    <th class="border-top-0" scope="col">Matric Number</th>
+                                    <th class="border-top-0" scope="col">Strength</th>
                                     <th class="border-top-0" scope="col">CGPA</th>
-                                    <th class="border-top-0" scope="col">Email Address</th>
+                                    <th class="border-top-0" scope="col">Faculty</th>
                                     <th class="border-top-0" scope="col">Status</th>
-
+                                    
 
                                 </tr>
                                 </thead>
@@ -34,6 +37,7 @@
                                         <td>{{ $show->cgpa}}</td>
                                         <td>{{ $show->faculty}}</td>
                                         <td>{{ $show->status}}</td>
+                                       
                                        
                                     </tr>
                                 @endforeach

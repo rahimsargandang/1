@@ -36,31 +36,29 @@ class candidateListController extends Controller
 
     }
 
+    public function appcandidate()
+    {
+
+            $candidate_approved=DB::table('candidate_lists')->where('status', '=', "Approved")->get();;
+            return view('admin.approvecandidate')->with(compact('candidate_approved'));
+    }
+
     public function approved($id)
     {
         //
-        $candidate_lists=CandidateList::find($id);
-        $candidate_lists->status='Approved';
-        $candidate_lists->save();
+        $candidate_approved=CandidateList::find($id);
+        $candidate_approved->status='Approved';
+        $candidate_approved->save();
         return redirect()->back();
     }
 
     public function rejected($id)
     {
         //
-        $candidate_lists=CandidateList::find($id);
-        $candidate_lists->status='Rejected';
-        $candidate_lists->save();
+        $candidate_approved=CandidateList::find($id);
+        $candidate_approved->status='Rejected';
+        $candidate_approved->save();
         return redirect()->back();
-    }
-
-    public function appcandidate()
-    {
-
-            $candidate_approved=DB::table('candidate_lists')->where('status', '=', "Approved")->get();;
-            return view('admin.approvecandidate')->with(compact('candidate_approved'));
-
-
     }
 
 }
