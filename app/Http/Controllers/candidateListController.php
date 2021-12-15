@@ -30,8 +30,8 @@ class candidateListController extends Controller
     public function index()
     {
 
-            $candidate_lists=DB::table('candidate_lists')->where('status', '=', "Pending")->get();;
-            return view('admin.candidateinfo')->with(compact('candidate_lists'));
+            $candidate_approved=DB::table('candidate_lists')->where('status', '=', "Pending")->get();;
+            return view('admin.approvecandidate')->with(compact('candidate_approved'));
 
 
     }
@@ -39,8 +39,8 @@ class candidateListController extends Controller
     public function appcandidate()
     {
 
-            $candidate_approved=DB::table('candidate_lists')->where('status', '=', "Approved")->get();;
-            return view('admin.approvecandidate')->with(compact('candidate_approved'));
+            $candidate_lists=DB::table('candidate_lists')->where('status', '=', "Approved")->get();;
+            return view('admin.candidateinfo')->with(compact('candidate_lists'));
     }
 
     public function approved($id)

@@ -1,7 +1,8 @@
 @extends('adminnavbar')
 
 @section('content')
-<div class="row justify-content-center">Candidate Information</div>
+
+<div class="row justify-content-center">Approve Candidate </div>
 <br>
 <div class="container">
 <div class="container">
@@ -16,32 +17,39 @@
                                 <thead class="table-light">
 
                                 <tr>
-                                    <th class="border-top-0" scope="col">No.</th>
-                                    <th class="border-top-0" scope="col">Name</th>
-                                    <th class="border-top-0" scope="col">Matric Number</th>
-                                    <th class="border-top-0" scope="col">Strength</th>
-                                    <th class="border-top-0" scope="col">CGPA</th>
-                                    <th class="border-top-0" scope="col">Faculty</th>
-                                    <th class="border-top-0" scope="col">Status</th>
-                                    
-
+                                    <th >No.</th>
+                                    <th >Name</th>
+                                    <th >Matric Numberr</th>
+                                    <th >Strength</th>
+                                    <th >CGPA</th>
+                                    <th >Faculty</th>
+                                    <th >Status</th>
+                                    <th >Approve</th>
+                                    <th >Reject</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                            @foreach ($candidate_approved as $show)
+                            <tbody>
+                            @foreach ($candidate_approved as $candidateshow)
                                     <tr>
-                                        <td>{{ $show->id}}</td>
-                                        <td>{{ $show->name}}</td>
-                                        <td>{{ $show->matricnum}}</td>
-                                        <td>{{ $show->strength}}</td>
-                                        <td>{{ $show->cgpa}}</td>
-                                        <td>{{ $show->faculty}}</td>
-                                        <td>{{ $show->status}}</td>
-                                       
-                                       
+                                        <td>{{ $candidateshow->id}}</td>
+                                        <td>{{ $candidateshow->name}}</td>
+                                        <td>{{ $candidateshow->matricnum}}</td>
+                                        <td>{{ $candidateshow->strength}}</td>
+                                        <td>{{ $candidateshow->cgpa}}</td>
+                                        <td>{{ $candidateshow->faculty}}</td>
+                                        <td>{{ $candidateshow->status}}</td>
+
+                                        <td>
+                                            <a class="btn btn-success" href="{{url('approved',$candidateshow->id)}}">Approve </a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-danger" href="{{url('rejected',$candidateshow->id)}}">Reject </a>
+                                        </td>
+
                                     </tr>
                                 @endforeach
                             </tbody>
+                                
                             </table>
                             </div>
                         </div>
@@ -49,4 +57,4 @@
 </div>
 </div>
 
-                @endsection
+@endsection
