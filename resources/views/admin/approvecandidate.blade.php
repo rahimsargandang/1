@@ -1,7 +1,7 @@
 @extends('adminnavbar')
 
 @section('content')
-<div class="row justify-content-center">Approve Candidate </div>
+<div class="row justify-content-center">Candidate Information</div>
 <br>
 <div class="container">
 <div class="container">

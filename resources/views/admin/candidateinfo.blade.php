@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="row justify-content-center">Candidate Information </div>
+<div class="row justify-content-center">Approve Candidate </div>
 <br>
 <div class="container">
 <div class="container">
