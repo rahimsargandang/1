@@ -23,10 +23,11 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background-color: #e3f2fd;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/admin') }}">
-                    {{ config('app.name', 'UKMVote') }}
+                <img  src="http://4.bp.blogspot.com/-1pLUcxOBjAo/Uan4Ol0aciI/AAAAAAAAAJs/D50sTgKz4IM/s1600/UKM.png" width="50"  >  
+                {{ config('app.name', 'UKMVote') }}
                 </a>
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
