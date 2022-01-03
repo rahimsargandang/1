@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\candidateListController;
+
+use App\Http\Controllers\SearchController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,3 +62,7 @@ Route::get('/admin/approvecandidate', 'App\Http\Controllers\candidateListControl
 Route::get('/approved/{id}', 'App\Http\Controllers\candidateListController@approved')->name('approved');
 
 Route::get('/rejected/{id}', 'App\Http\Controllers\candidateListController@rejected')->name('rejected');
+
+
+
+Route::get('/search','App\Http\Controllers\SearchController@search')->name('search');
