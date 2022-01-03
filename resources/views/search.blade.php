@@ -31,7 +31,7 @@
              <br>
              <hr>
              <br>
-             @if(isset($countries))
+             @if(isset($candidates))
 
                <table class="table table-hover">
                    <thead>
@@ -58,8 +58,8 @@
                </table>
 
                <div class="pagination-block">
-                   <?php //{{ $countries->links('layouts.paginationlinks') }} ?>
-                   {{  $countries->appends(request()->input())->links('layouts.paginationlinks') }}
+                   <?php //{{ $candidates->links('layouts.paginationlinks') }} ?>
+                   {{  $candidates->appends(request()->input())->links('layouts.paginationlinks') }}
                </div>
 
              @endif

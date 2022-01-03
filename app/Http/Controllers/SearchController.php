@@ -3,12 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
     function search(Request $request){
 
+        if(isset($_GET['query']) && strlen($_GET['query'])>2){
+
+            $search_text = $_GET['query'];
+            $candidates = DB::table('candidate_lists')->where('name','LIKE','%'.$search_text.'%')->paginate(2);
+            $candidates->appends($request->all());
+            return view('search',['candidates'=>$candidates]);
+
+            // echo 'get text';
+
+        }else{
         return view('search');
+
+        }
     }
     /**
      * Display a listing of the resource.
