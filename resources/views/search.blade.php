@@ -27,6 +27,42 @@
                  <button type="submit" class="btn btn-primary">Search</button>
                 </div>
              </form>
+             <br>
+             <br>
+             <hr>
+             <br>
+             @if(isset($countries))
+
+               <table class="table table-hover">
+                   <thead>
+                       <tr>
+                           <th>Name</th>
+                           <th>Matric Num</th>
+                           <th>Strength</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       @if(count($candidates) > 0)
+                           @foreach($candidates as $candidate_search)
+                              <tr>
+                                  <td>{{ $candidate_search->name }}</td>
+                                  <td>{{ $candidate_search->matricnum }}</td>
+                                  <td>{{ $candidate_search->strength }}</td>
+                              </tr>
+                           @endforeach
+                       @else
+
+                          <tr><td>No result found!</td></tr>
+                       @endif
+                   </tbody>
+               </table>
+
+               <div class="pagination-block">
+                   <?php //{{ $countries->links('layouts.paginationlinks') }} ?>
+                   {{  $countries->appends(request()->input())->links('layouts.paginationlinks') }}
+               </div>
+
+             @endif
           </div>
        </div>
     </div>
