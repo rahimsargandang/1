@@ -11,15 +11,16 @@
     <link rel="stylesheet" href="{{ asset('bootstrap-3.1.1/css/bootstrap.min.css')}}">
 </head>
 <body>
-    <div class="container">
+    <div class="container ">
+        <div class="form-group text-center">
        <div class="row">
-          <div class="col-md-6" style="margin-top:40px">
-             <h4>Search Everything</h4><hr>
+          <div class="col-sm-12" style="margin-top:40px">
+             <h4>Search Candidate</h4><hr>
              <form action="{{ route('search') }}" method="GET">
         
                 <div class="form-group">
                    <label for="">Enter keyword</label>
-                   <input type="text" class="form-control" name="query" placeholder="Search here....." value="{{ request()->input('query') }}">
+                   <input type="text" class="form-control mt-4 text-center" name="query" placeholder="Search here....." value="{{ request()->input('query') }}">
                    <br>
                    <span class="text-danger">@error('query'){{ $message }} @enderror</span>
                 </div>
@@ -65,6 +66,7 @@
              @endif
           </div>
        </div>
+    </div>
     </div>
 </body>
 </html>
