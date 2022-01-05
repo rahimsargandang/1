@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CandidateList;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use DB;
 
 
@@ -77,8 +78,46 @@ class candidateListController extends Controller
 
     public function votingpage()
     {
-        $candidates = DB::table('candidate_lists')->where('status', '=', "Approved")->get();
-        return view('vote',['candidates'=> $candidates]);
+        if(!Auth::user()->has_voted){
+
+
+            $candidates = DB::table('candidate_lists')->where('status', '=', "Approved")->get();
+            return view('vote',['candidates'=> $candidates]);
+
+        }else{
+
+            return redirect('home')->with('flashMessageProblem','You have already voted! You only can vote once!');
+
+
+        }
+
+
     }
 
+    public function castVote(Request $request)
+    {
+       
+
+       $candidateId = $request ->input('candidateId');
+       
+
+       foreach($candidateId as $cid){
+       DB::table('candidate_lists')->where('id',$cid)
+        ->update ([
+            
+                'votes_count' =>DB::raw("votes_count + 1")
+
+        ]);}
+
+
+        DB::table('users')->where('id',Auth::user()->id)
+        ->update([
+
+            'has_voted'=>1
+
+        ]);
+        
+        return redirect('home')->with('flashMessage','You have successfully voted. Thank you for your vote!');
+
+    }
 }

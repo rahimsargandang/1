@@ -21,5 +21,6 @@ class CandidateList extends Model
             'votes_count'
         ];
     
+        
 }
 
