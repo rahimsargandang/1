@@ -4,7 +4,8 @@
 
 <div class="container">
 
-    <form action="">
+    <form action="{{route('castVote')}}" method="post">
+    {{ csrf_field() }}
         <fieldset class="form-group text-center">
             <div class="row">
             <div class="col-sm-5" style="margin:0 auto">
@@ -30,14 +31,33 @@
                     <td>{{$candidate->name}}</td>
                     <td><div class="form-check mb-3 mt-2">
                         <label class="form-check-label" for="defaultCheck1">
-                        <input class="form-check-input" type="checkbox" name="candidatename" value="{{$candidate->id}}" id="defaultCheck1">
-                            
+                        <input class="form-check-input" type="checkbox" name="candidateId[]" value="{{$candidate->id}}" id="candidateId[]" onclick="return vlimit()">
                         </label>
                         </div>
                     </td>
                     
                     
                 </tr>
+                
+                <script>
+
+                    function vlimit(){
+                        var a = document.getElementsByName('candidateId[]');
+                        var newvar = 0;
+                        var count;
+                        for(count=0; count<a.length; count++){
+                            if(a[count].checked==true){
+                                newvar = newvar+1;
+                            }
+                        }
+                        if(newvar>=3){
+                            document.getElementById('notvalid').innerHTML="Please select only 2 candidate!"
+                            return false;
+
+                        }
+                    }
+
+                </script>
                 
                 @endforeach
 
@@ -46,6 +66,7 @@
                 </div>
                 </tbody>
                 </table>
+                <div style="color:red" id="notvalid"></div>
 
                 <div class="form-group row">
                 <div class="col-sm-10 mt-5" style="margin:0 auto">

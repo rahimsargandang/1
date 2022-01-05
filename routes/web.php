@@ -65,6 +65,6 @@ Route::get('/approved/{id}', 'App\Http\Controllers\candidateListController@appro
 
 Route::get('/rejected/{id}', 'App\Http\Controllers\candidateListController@rejected')->name('rejected');
 
-
+Route::post('/castVote',[candidateListController::class, 'castVote'])->name('castVote');
 
 Route::get('/search','App\Http\Controllers\SearchController@search')->name('search');

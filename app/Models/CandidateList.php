@@ -19,5 +19,6 @@ class CandidateList extends Model
             'status'
         ];
     
+        
 }
 

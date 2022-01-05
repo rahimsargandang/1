@@ -18,9 +18,10 @@ class CreateCandidateListsTable extends Migration
             $table->string('name');
             $table->string('matricnum');
             $table->string('strength');
-            $table->integer('cgpa');
+            $table->float('cgpa');
             $table->string('faculty');
             $table->string('status')->nullable();
+            $table->integer('votes_count');
             $table->timestamps();
         });
     }

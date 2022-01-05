@@ -23,14 +23,19 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background-color: #e3f2fd;">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/admin') }}">
-                <img  src="https://cdn.discordapp.com/attachments/702060431577055273/920662998513762304/Sport_Equipment_Store_Logo_Generated_With_Illustration_Of_Mountain_2_1.png" width="200" height="50"  >  
+        <nav class="navbar navbar-expand-md  navbar-dark bg-dark shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand mb-0 h1" href="{{ url('/admin') }}">
+                UKMVote  
                 
                 </a>
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                
+                
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav me-auto">
+                    <li class="nav-item active">
                     <a class="nav-link" href="{{ url('/admin/approvecandidate') }}">Approve Candidate</span></a>
                 </li>
                 <li class="nav-item active">
@@ -39,10 +44,6 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
 
                     </ul>
 
