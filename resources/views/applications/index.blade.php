@@ -13,7 +13,12 @@
 
   <div class="container">
   <div class="row justify-content-center">
-  <div class="col-md-8">  
+  <div class="col-md-8"> 
+    
+  @if (session('status'))
+    <h6 class="alert alert-success">{{ session('status')}}</h6>
+  @endif
+
   <div class="card">
   <div class="card-header">{{ __('Candidate Application') }}</div>
     <!-- <div class="row justify-content-center "> -->
@@ -21,6 +26,7 @@
         <div class="card-body">
       <form method ="post" action="{{ route('candidate.store') }}">
       {{ csrf_field() }}
+      @csrf
 
  <!-- <div class="form-group pt-2"> -->
   <!-- <div class="row mb-3">
@@ -96,12 +102,24 @@
                                 <option value="FTSM">FTSM</option>
                                 <option value="FSK">FSK</option>
                                 <option value="FEB">FEB</option>
-                                <option value="FEB">FUU</option>
-                                <option value="FEB">FST</option>
-                                <option value="FEB">FSSK</option>
+                                <option value="FUU">FUU</option>
+                                <option value="FST">FST</option>
+                                <option value="FSSK">FSSK</option>
                             </select>
 
                                 @error('faculty')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        
+  </div>
+  <div class="row mb-3">
+                            <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
+                            <div class="col-md-6">
+                            <input type="file" class="form-control" id="image" name="image" />
+                                @error('image')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

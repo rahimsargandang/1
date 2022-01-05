@@ -30,7 +30,8 @@ class SearchController extends Controller
      */
     public function index()
     {
-        //
+        $candidates = Candidate::all();
+        return view('search');
     }
 
     /**
