@@ -52,6 +52,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin/candidateinfo', 'App\Http\Controllers\AdminController@cinfo')->name('candidateinfo');
 Route::get('/admin/candidateinfo', 'App\Http\Controllers\candidateListController@appcandidate')->name('appcandidate');
 
+Route::get('/voting','App\Http\Controllers\candidateListController@votingpage')->name('votingpage');
+
 Route::get('/applications', 'App\Http\Controllers\ApplicationController@index')->name('index');
 
 Route::resource('candidate','App\Http\Controllers\candidateListController');

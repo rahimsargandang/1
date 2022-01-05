@@ -30,6 +30,9 @@
                 </a>
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
+                    <a class="nav-link" href="{{ url('voting') }}">Vote</span></a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link" href="{{ url('applications') }}">Application</span></a>
                 </li>
                 <li class="nav-item active">

@@ -61,4 +61,10 @@ class candidateListController extends Controller
         return redirect()->back();
     }
 
+    public function votingpage()
+    {
+        $candidates = DB::table('candidate_lists')->where('status', '=', "Approved")->get();
+        return view('vote',['candidates'=> $candidates]);
+    }
+
 }
