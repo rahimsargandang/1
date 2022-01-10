@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $dd=DB::table('candidate_lists')->where('status', '=', "Approved")->count();;
+        return view('/admin')->with(compact('dd'));
     }
 }

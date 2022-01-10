@@ -1,4 +1,4 @@
-@extends('adminnavbar')
+@extends('admin.layouts.admin-dash-layout')
 
 @section('content')
 <div class="row justify-content-center"></div>
@@ -47,7 +47,8 @@
                             </div>
                         </div>
                     </div>
-</div>
-</div>
+            </div>
+        </div>
 
-                @endsection
+</div>
+@endsection

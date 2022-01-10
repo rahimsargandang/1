@@ -1,4 +1,4 @@
-@extends('adminnavbar')
+@extends('admin.layouts.admin-dash-layout')
 
 @section('content')
 
@@ -53,6 +53,7 @@
                             </div>
                         </div>
                     </div>
+</div>
 </div>
 </div>
 

@@ -31,10 +31,12 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function index()
     {
-        //
+        $candidate_lists=DB::table('candidate_lists')->where('status', '=', "Approved")->count();;
+        return view('/admin')->with(compact('candidate_lists'));
     }
+    
 
     /**
      * Store a newly created resource in storage.

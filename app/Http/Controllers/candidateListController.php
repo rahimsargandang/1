@@ -58,6 +58,13 @@ class candidateListController extends Controller
             return view('admin.candidateinfo')->with(compact('candidate_lists'));
     }
 
+    public function assignpos()
+    {
+
+            $assignpos=DB::table('candidate_lists')->where('status', '=', "Approved")->get();;
+            return view('admin.assignposition')->with(compact('assignpos'));
+    }
+
     public function approved($id)
     {
         //
