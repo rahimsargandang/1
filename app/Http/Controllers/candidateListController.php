@@ -60,7 +60,7 @@ class candidateListController extends Controller
 
     public function assignpos()
     {
-
+            
             $assignpos=DB::table('candidate_lists')->where('status', '=', "Approved")->get();;
             return view('admin.assignposition')->with(compact('assignpos'));
     }
@@ -126,5 +126,14 @@ class candidateListController extends Controller
         
         return redirect('home')->with('flashMessage','You have successfully voted. Thank you for your vote!');
 
+    }
+
+    public function count(){
+
+        $totalvoter=DB::table('users')->where('user_type', '=', '')->orWhereNull('user_type')->count();;
+        $totalhasvoted=DB::table('users')->where('has_voted', '=', "1")->count();;
+        $totalcandidate=DB::table('candidate_lists')->where('status', '=', "Pending")->count();;
+        $counts=DB::table('candidate_lists')->where('status', '=', "Approved")->count();;
+        return view('admin.dashboard', [ "counts" => $counts, "totalcandidate"=>$totalcandidate, "totalhasvoted"=>$totalhasvoted,"totalvoter"=>$totalvoter ]);
     }
 }

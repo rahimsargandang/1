@@ -17,7 +17,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-              <i class="nav-icon fas fa-exclamation-circle"></i> <h3>150</h3>
+              <i class="nav-icon fas fa-exclamation-circle"></i> <h3>{{$totalvoter}}</h3>
 
                 <p>Total Voter</p>
               </div>
@@ -31,9 +31,9 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-              <i class="nav-icon fas fa-check"></i> <h3>200<sup style="font-size: 20px"></sup></h3>
+              <i class="nav-icon fas fa-check"></i> <h3>{{$totalhasvoted}}<sup style="font-size: 20px"></sup></h3>
 
-                <p>Total Votes</p>
+                <p>Total Voter has Voted</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -45,7 +45,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px"></sup></h3>
+                <h3>{{$totalcandidate}}<sup style="font-size: 20px"></sup></h3>
 
                 <p>Total Candidates Application</p>
               </div>
@@ -60,14 +60,16 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px"></sup></h3>
+                
+                <h3>{{$counts}}<sup style="font-size: 20px"></sup></h3>
+                
 
                 <p>Total Approved Candidates</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="/admin/candidateinfo" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/admin/candidateinfo" class="small-box-footer"> More info<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
 
@@ -75,5 +77,7 @@
     </div>
     </div>
     </div>
+
+   
 
 @endsection
