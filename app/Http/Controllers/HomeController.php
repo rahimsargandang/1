@@ -24,7 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $dd=DB::table('candidate_lists')->where('status', '=', "Approved")->count();;
-        return view('/admin')->with(compact('dd'));
+        return view('home');
     }
 }
