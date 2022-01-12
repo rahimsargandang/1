@@ -25,15 +25,27 @@ class candidateListController extends Controller
         ]);
 
         if($request->hasfile('image'))
+        
             {
+
                 $file=$request->file('image');
+
                 $extention=$file->getClientOriginalExtension();
+
                 $filename=time().'.'.$extention;
+
                 // $file->storeAs('/uploads/candidate_lists/', $filename);
+
                 // $file->photo->path('/uploads/candidate_lists/');
+
                 // $file->storeAs(public_path('/uploads/candidate_lists'),$filename);
+
                 $file->move('uploads/candidate_lists/', $filename);
+
                 $candidate_lists->image=$filename;
+
+                $path = $file->storeAs('image', $filename);
+
             }
             $candidate_lists->save();
         
@@ -47,8 +59,6 @@ class candidateListController extends Controller
 
             $candidate_approved=DB::table('candidate_lists')->where('status', '=', "Pending")->get();;
             return view('admin.approvecandidate')->with(compact('candidate_approved'));
-
-
     }
 
     public function appcandidate()

@@ -24,7 +24,7 @@
     <!-- <div class="row justify-content-center "> -->
         <!-- <div class="col-md-5"> -->
         <div class="card-body">
-      <form method ="post" action="{{ route('candidate.store') }}">
+      <form method ="post" enctype="multipart/form-data" action="{{ route('candidate.store') }}">
       {{ csrf_field() }}
       @csrf
 
