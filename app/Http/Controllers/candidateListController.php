@@ -136,4 +136,13 @@ class candidateListController extends Controller
         $counts=DB::table('candidate_lists')->where('status', '=', "Approved")->count();;
         return view('admin.dashboard', [ "counts" => $counts, "totalcandidate"=>$totalcandidate, "totalhasvoted"=>$totalhasvoted,"totalvoter"=>$totalvoter ]);
     }
+
+    public function elecres(){
+
+        $elecres=DB::table('candidate_lists')->where('status', '=', "Approved")
+            ->get()
+            ->sortByDesc('votes_count');
+        return view('admin.electionresult')->with(compact('elecres'));
+
+    }
 }

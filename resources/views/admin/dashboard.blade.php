@@ -3,12 +3,9 @@
 @section('content')
 <div class="container">
 
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="text-center">
-            <img  src="https://www.ukm.my/pkk//wp-content/logo/en/Alternatelogo_blacktext.png" width="800"  >
-
-            ADMIN
-
+            <img  src="https://media.discordapp.net/attachments/641549974777364500/930815615734808657/imageedit_9_2107907758-removebg-preview_1.png" width="450"  >
         </div>
         <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
@@ -73,10 +70,14 @@
             </div>
           </div>
 
+   
+
+
     </div>
-    </div>
-    </div>
-    </div>
+</div>
+
+</div>
+</div>
 
    
 

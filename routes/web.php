@@ -56,6 +56,8 @@ Route::get('/admin', 'App\Http\Controllers\candidateListController@count')->name
 
 Route::get('/admin/assignposition', 'App\Http\Controllers\candidateListController@assignpos')->name('assignpos');
 
+Route::get('/admin/electionresult', 'App\Http\Controllers\candidateListController@elecres')->name('elecres');
+
 Route::get('/voting','App\Http\Controllers\candidateListController@votingpage')->name('votingpage');
 
 Route::get('/applications', 'App\Http\Controllers\ApplicationController@index')->name('index');

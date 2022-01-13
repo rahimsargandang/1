@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{Auth::user()->name}}</a>
+          <a href="/admin" class="d-block">{{Auth::user()->name}}</a>
         </div>
       </div>
 
@@ -87,10 +87,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/admin/assignposition') }}" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
+            <a href="{{ url('/admin/electionresult') }}" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
               <p>
-                Assign Position
+                Election Result
               </p>
             </a>
           </li>
