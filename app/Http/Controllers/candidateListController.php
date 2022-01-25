@@ -11,7 +11,8 @@ use DB;
 class candidateListController extends Controller
 {
     public function store(Request $request)
-    {
+
+{
         $candidate_lists=   $request->validate([
 
             'name' => 'required',
@@ -19,20 +20,31 @@ class candidateListController extends Controller
             'strength' => 'required',
             'cgpa' => 'required',  
             'faculty' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg',
             'status' => 'required'
             // 'votes_count' => '0',
                   
         ]);
 
         if($request->hasfile('image'))
-        
-            {
 
-                $file=$request->file('image');
+        {
 
-                $extention=$file->getClientOriginalExtension();
+        $file_name =  $request->image->getClientOriginalName();
 
-                $filename=time().'.'.$extention;
+       $image =  $request-> image->storeAs('images', $file_name);    
+
+
+    
+           // {
+              //  $validatedData = $request->validate([
+                //    'image' => 'required|image|mimes:jpg,png,jpeg' ]);
+
+              //  $file=$request->file('image');
+
+              //  $extention=$file->getClientOriginalExtension();
+
+              // $filename=time().'.'.$extention;
 
                 // $file->storeAs('/uploads/candidate_lists/', $filename);
 
@@ -40,18 +52,31 @@ class candidateListController extends Controller
 
                 // $file->storeAs(public_path('/uploads/candidate_lists'),$filename);
 
-                $file->move('uploads/candidate_lists/', $filename);
+             //   $file->move('uploads/candidate_lists/', $filename);
 
-                $candidate_lists->image=$filename;
+              //  $candidate_lists->image=$filename;
 
-                $path = $file->storeAs('image', $filename);
+              //  $path = $file->storeAs('image', $filename);
 
             }
-            $candidate_lists->save();
         
-        CandidateList::create($request->all());
+        CandidateList::create([
 
-            return redirect ('applications')->with('status','Image Added Successfully');
+                'name' =>$request ->name,
+                'matricnum' =>$request ->matricnum,
+                'strength' =>$request ->strength,
+                'cgpa' =>$request ->cgpa,
+                'faculty' =>$request ->faculty,
+                'image' =>$image,
+                'status' =>$request ->status,
+
+
+
+
+        ]);
+
+
+            return redirect ('home')->with('status','Candidate Application has been submitted!');
     }
     
     public function index()
@@ -155,4 +180,13 @@ class candidateListController extends Controller
         return view('admin.electionresult')->with(compact('elecres'));
 
     }
+
+    public function ongoresult(){
+        $ongores=DB::table('candidate_lists')->where('status', '=', "Approved")
+            ->get()
+            ->sortByDesc('votes_count');
+        return view('ongoresult')->with(compact('ongores'));
+
+    }
+
 }

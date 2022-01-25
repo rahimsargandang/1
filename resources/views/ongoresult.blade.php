@@ -1,5 +1,4 @@
-@extends('admin.layouts.admin-dash-layout')
-
+@extends('navbar')
 @section('content')
 <div class="row justify-content-center"></div>
 <br>
@@ -10,7 +9,7 @@
                     <div class="col-md-10col-3">
 
                         <div class="card">
-                        <div class="card-header row justify-content-center">{{ __('Election Votes') }}</div>   
+                        <div class="card-header row justify-content-center">{{ __('On-going Election') }}</div>   
                         
                             <div class="table-responsive">
                             <table class="table table-bordered">
@@ -28,7 +27,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                            @foreach ($elecres as $show)
+                            @foreach ($ongores as $show)
                                     <tr>
                                         <td>{{ $show->id}}</td>
                                         <td><img src="{{ asset('storage/'.$show->image)}}" width="100px" height="100px"alt="Image"></td>

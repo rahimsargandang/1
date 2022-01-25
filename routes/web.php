@@ -58,6 +58,8 @@ Route::get('/admin/assignposition', 'App\Http\Controllers\candidateListControlle
 
 Route::get('/admin/electionresult', 'App\Http\Controllers\candidateListController@elecres')->name('elecres');
 
+Route::get('/ongoresult', 'App\Http\Controllers\candidateListController@ongoresult')->name('ongoresult');
+
 Route::get('/voting','App\Http\Controllers\candidateListController@votingpage')->name('votingpage');
 
 Route::get('/applications', 'App\Http\Controllers\ApplicationController@index')->name('index');
@@ -74,3 +76,6 @@ Route::get('/rejected/{id}', 'App\Http\Controllers\candidateListController@rejec
 Route::post('/castVote',[candidateListController::class, 'castVote'])->name('castVote');
 
 Route::get('/search','App\Http\Controllers\SearchController@search')->name('search');
+
+Route::get('/imagepreview', [candidateListController::class, 'imagepreview'])->name('imagepreview');
+

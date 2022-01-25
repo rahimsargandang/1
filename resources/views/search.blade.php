@@ -51,7 +51,7 @@
                                   <td>{{ $candidate_search->matricnum }}</td>
                                   <td>{{ $candidate_search->strength }}</td>
                                   <td> 
-                                      <img src="{{ asset('uploads/candidate_lists/'.$candidate_search->image) }}" width="70px" height="70px" alt="Image">
+                                      <img src="{{ asset('storage/'.$candidate_search->image) }}" width="70px" height="70px" alt="Image">
                                   </td>
                               </tr>
                            @endforeach

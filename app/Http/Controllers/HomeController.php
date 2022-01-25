@@ -24,6 +24,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $ongores=DB::table('candidate_lists')->where('status', '=', "Approved")
+        ->get()
+        ->sortByDesc('votes_count');
+        $piechartres=DB::table('candidate_lists')->where('status', '=', "Approved")
+        ->get();
+
+    $chartData="";
+    foreach($piechartres as $show){
+        $chartData.="['".$show->party."',".$show->votes_count."],";
+     }
+    //echo $chartData;
+    
+    $arr['chartData'] =rtrim($chartData,",");
+
+    return view('home',[ "arr" => $arr, "ongores"=>$ongores]);
     }
+
 }

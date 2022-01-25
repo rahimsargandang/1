@@ -14,7 +14,7 @@
 
                 <table class="table table-bordered">
                 <thead class="table-light">
-                <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                <div class="card text-dark bg-info mb-3" style="max-width: 35rem;">
                 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
                 <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
@@ -28,16 +28,18 @@
                 </svg>
                 
             
-                <div class="alert alert-primary d-flex align-items-center " role="alert">
+                <div class="alert alert-primary d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
-                <div>
+                <div class=" mt-3 mb-2 col-md-10 offset-md-10" style="margin:0 auto">
                     In this section, Voter must vote 2 candidate only. Choose wisely!
                 </div>
 
   </div>
                 <tr>
                     
+                    <th class="border-top-0" scope="col">Image</th>
                     <th class="border-top-0" scope="col">Name</th>
+                    <th class="border-top-0" scope="col">Party</th>
                     <th class="border-top-0" scope="col">Vote</th>
                     
                     
@@ -49,8 +51,10 @@
 
                 @foreach($candidates as $candidate)
                 <tr>
-                    <td>{{$candidate->name}}</td>
-                    <td><div class="form-check mb-3 mt-2">
+                    <td><img src="{{ asset('storage/'.$candidate->image)}}" width="150px" height="150px"alt="image"></td>
+                    <td ><div class="mt-5 mb-4">{{$candidate->name}}</div></td>
+                    <td ><div class="mt-5 mb-4">{{$candidate->party}}</div></td>
+                    <td><div class="form-check mb-4 mt-5">
                         <label class="form-check-label" for="defaultCheck1">
                         <input class="form-check-input" type="checkbox" name="candidateId[]" value="{{$candidate->id}}" id="candidateId[]" onclick="return vlimit()">
                         </label>

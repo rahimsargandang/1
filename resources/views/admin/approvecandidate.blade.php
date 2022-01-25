@@ -18,6 +18,7 @@
 
                                 <tr>
                                     <th >No.</th>
+                                    <th>Image</th>
                                     <th >Name</th>
                                     <th >Matric Numberr</th>
                                     <th >Strength</th>
@@ -32,6 +33,7 @@
                             @foreach ($candidate_approved as $candidateshow)
                                     <tr>
                                         <td>{{ $candidateshow->id}}</td>
+                                        <td><img src="{{ asset('storage/'.$candidateshow->image)}}" width="100px" height="100px"alt="image"></td>
                                         <td>{{ $candidateshow->name}}</td>
                                         <td>{{ $candidateshow->matricnum}}</td>
                                         <td>{{ $candidateshow->strength}}</td>

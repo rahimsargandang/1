@@ -18,6 +18,7 @@
 
                                 <tr>
                                     <th class="border-top-0" scope="col">No.</th>
+                                    <th class="border-top-0" scope="col">Image</th>
                                     <th class="border-top-0" scope="col">Name</th>
                                     <th class="border-top-0" scope="col">Matric Number</th>
                                     <th class="border-top-0" scope="col">Strength</th>
@@ -32,6 +33,7 @@
                             @foreach ($candidate_lists as $show)
                                     <tr>
                                         <td>{{ $show->id}}</td>
+                                        <td><img src="{{ asset('storage/'.$show->image)}}" width="100px" height="100px"alt="image"></td>
                                         <td>{{ $show->name}}</td>
                                         <td>{{ $show->matricnum}}</td>
                                         <td>{{ $show->strength}}</td>

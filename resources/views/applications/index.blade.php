@@ -15,9 +15,7 @@
   <div class="row justify-content-center">
   <div class="col-md-8"> 
     
-  @if (session('status'))
-    <h6 class="alert alert-success">{{ session('status')}}</h6>
-  @endif
+
 
   <div class="card">
   <div class="card-header">{{ __('Candidate Application') }}</div>
@@ -26,8 +24,6 @@
         <div class="card-body">
       <form method ="post" enctype="multipart/form-data" action="{{ route('candidate.store') }}">
       {{ csrf_field() }}
-      @csrf
-
  <!-- <div class="form-group pt-2"> -->
   <!-- <div class="row mb-3">
     <label for="candidateapplicationname">Name</label>
@@ -127,25 +123,17 @@
                             </div>
                         
   </div>
-  <!-- <div class="form-group pt-2">
-                            <label class="my-1 me-2" for="faculty">Faculty</label>
-                            <select class="form-select" id="faculty" name="faculty" >
-                                <option selected>Select Faculty</option>
-                                <option value="FTSM">FTSM</option>
-                                <option value="FSK">FSK</option>
-                                <option value="FEB">FEB</option>
-                                <option value="FEB">FUU</option>
-                                <option value="FEB">FST</option>
-                                <option value="FEB">FSSK</option>
-                            </select>
-                        
-                        <div class="row mb-6 pt-2 pb-2" >
-                            <div class="col-md-8 offset-md-5"> -->
+  <div class="row mb-3">
+  <div class="col-md-6 offset-md-5">
+                  <img id="preview-image-before-upload" src="https://media.discordapp.net/attachments/702060431577055273/931017734752469042/noiamge.jpg"
+                      alt="preview image" style="max-height: 300px; max-width:200px">
+              </div>
+              </div>
                             
 <input type="hidden" name="status" id="status" value="Pending" />                            
-  <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-  <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
+
+  <div class="row mb-0 ">
+                            <div class="col-md-6 offset-md-5">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     {{ __('Submit') }}
                                 </button>
@@ -171,6 +159,29 @@
                         </div>
 </div>
 </form>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script type="text/javascript">
+     
+$(document).ready(function (e) {
+
+  
+   $('#image').change(function(){
+           
+    let reader = new FileReader();
+
+    reader.onload = (e) => { 
+
+      $('#preview-image-before-upload').attr('src', e.target.result); 
+    }
+
+    reader.readAsDataURL(this.files[0]); 
+  
+   });
+  
+});
+
+</script>
 </body>
 </html>
 @endsection
