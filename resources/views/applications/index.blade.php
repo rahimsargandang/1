@@ -80,7 +80,7 @@
   <div class="row mb-3">
                             <label for="cgpa" class="col-md-4 col-form-label text-md-right">{{ __('CGPA') }}</label>
                             <div class="col-md-6">
-                              <input type="number" placeholder="1.0" step="0.01" min="0" max="4.0" class="form-control" id="cgpa" name ="cgpa" placeholder="CGPA">
+                              <input type="number" placeholder="4.00" step="0.01" min="0" max="4.0" class="form-control" id="cgpa" name ="cgpa" placeholder="CGPA">
                             </div>
                         
   </div>
@@ -95,12 +95,19 @@
           
                                 <select class="form-select" id="faculty" name="faculty" >
                                 <option selected>Select Faculty</option>
-                                <option value="FTSM">FTSM</option>
+                                <option value="CITRA">CITRA</option>
+                                <option value="FEP">FEP</option>
+                                <option value="FFAR">FFAR</option>
+                                <option value="FKAB">FKAB</option>
+                                <option value="FPEND">FPEND</option>
+                                <option value="FPER">FPER</option>  
+                                <option value="FPERG">FPERG</option>                 
+                                <option value="FPI">FPI</option>
                                 <option value="FSK">FSK</option>
-                                <option value="FEB">FEB</option>
-                                <option value="FUU">FUU</option>
                                 <option value="FST">FST</option>
                                 <option value="FSSK">FSSK</option>
+                                <option value="FTSM">FTSM</option>
+                                <option value="FUU">FUU</option> 
                             </select>
 
                                 @error('faculty')
@@ -110,6 +117,64 @@
                                 @enderror
                             </div>
                         
+  </div>
+  <div class="row mb-3">
+                            <label for="party" class="col-md-4 col-form-label text-md-right">{{ __('Party') }}</label>
+
+                            <div class="col-md-6">
+          
+                                <select class="form-select" id="party" name="party" >
+                                <option selected>Select Party</option>
+                                <option value="Inspirasi Varsiti">Inspirasi Varsiti</option>
+                                <option value="Kongres Siswa">Kongres Siswa</option>
+                                <option value="Republican">Republican</option>
+                                <option value="Demokrat">Demokrat</option>
+                                <option value="Pendaulat">Pendaulat</option>
+                                <option value="Bebas">Bebas</option>
+                            </select>
+
+                                @error('party')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+  </div>
+  <div class="row mb-3">
+                            <label for="area" class="col-md-4 col-form-label text-md-right">{{ __('Area') }}</label>
+
+                            <div class="col-md-6">
+          
+                                <select class="form-select" id="area" name="area" >
+                                <option selected>Select Electoral Area</option>
+                                <option value="Umum">Umum</option>
+                                <option value="Fakulti">Fakulti</option>
+                            </select>
+
+                                @error('area')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+  </div>
+  <div class="row mb-3">
+                            <label for="year" class="col-md-4 col-form-label text-md-right">{{ __('Year') }}</label>
+
+                            <div class="col-md-6">
+          
+                                <select class="form-select" id="year" name="year" >
+                                <option selected>Select Year Category</option>
+                                <option value="1/2">1/2</option>
+                                <option value="3/4">3/4</option>
+                            </select>
+
+                                @error('year')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
   </div>
   <div class="row mb-3">
                             <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
