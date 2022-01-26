@@ -21,8 +21,10 @@ class candidateListController extends Controller
             'cgpa' => 'required',  
             'faculty' => 'required',
             'image' => 'required|mimes:jpg,png,jpeg',
-            'status' => 'required'
-            // 'votes_count' => '0',
+            'status' => 'required',
+            'party' => 'required',
+            'elecarea' => 'required'
+            
                   
         ]);
 
@@ -35,29 +37,6 @@ class candidateListController extends Controller
        $image =  $request-> image->storeAs('images', $file_name);    
 
 
-    
-           // {
-              //  $validatedData = $request->validate([
-                //    'image' => 'required|image|mimes:jpg,png,jpeg' ]);
-
-              //  $file=$request->file('image');
-
-              //  $extention=$file->getClientOriginalExtension();
-
-              // $filename=time().'.'.$extention;
-
-                // $file->storeAs('/uploads/candidate_lists/', $filename);
-
-                // $file->photo->path('/uploads/candidate_lists/');
-
-                // $file->storeAs(public_path('/uploads/candidate_lists'),$filename);
-
-             //   $file->move('uploads/candidate_lists/', $filename);
-
-              //  $candidate_lists->image=$filename;
-
-              //  $path = $file->storeAs('image', $filename);
-
             }
         
         CandidateList::create([
@@ -67,11 +46,20 @@ class candidateListController extends Controller
                 'strength' =>$request ->strength,
                 'cgpa' =>$request ->cgpa,
                 'faculty' =>$request ->faculty,
+                'party' =>$request ->party,
+                'elecarea' =>$request ->elecarea,
                 'image' =>$image,
                 'status' =>$request ->status,
 
 
 
+
+        ]);
+        
+        DB::table('users')->where('id',Auth::user()->id)
+        ->update([
+
+            'has_apply'=>1
 
         ]);
 
@@ -120,7 +108,13 @@ class candidateListController extends Controller
 
     public function votingpage()
     {
-        if(!Auth::user()->has_voted){
+        if (now() > date('2022-01-28 00:00:00')){
+
+            return \redirect('home')->with('flashMessageProblem','You can no longer vote. Polls closed on 28 Jan');
+
+
+        }
+        else if(!Auth::user()->has_voted){
 
 
             $candidates = DB::table('candidate_lists')->where('status', '=', "Approved")->get();
@@ -188,5 +182,5 @@ class candidateListController extends Controller
         return view('ongoresult')->with(compact('ongores'));
 
     }
-
+ 
 }
