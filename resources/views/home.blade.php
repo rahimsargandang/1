@@ -76,7 +76,6 @@
                 <table class="table table">
                   <thead>
                     <tr>
-
                       <th>Party</th>
                       <th>Progress</th>
                       <th style="width: 40px">Votes</th>

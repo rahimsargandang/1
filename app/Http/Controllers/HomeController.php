@@ -24,9 +24,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $ongores=DB::table('candidate_lists')->where('status', '=', "Approved")->distinct()
+
+        $ongores=DB::table('candidate_lists')->select('party', DB::raw( 'SUM(votes_count) as votes_count'))
+        ->groupBy('party')
         ->get()
         ->sortByDesc('votes_count');
+        //$ongores=DB::table('candidate_lists')->where('status', '=', "Approved")
+        //->select('party','votes_count')->distinct()
+        //->get()
+        //->sortByDesc('votes_count');
         $elecfac=DB::table('candidate_lists')->where('status', '=', "Approved")
         ->where('elecarea', '=', "Fakulti")
         ->get()

@@ -24,6 +24,7 @@
                                     <th >Strength</th>
                                     <th >CGPA</th>
                                     <th >Faculty</th>
+                                    <th >Election Area</th>
                                     <th >Status</th>
                                     <th >Action</th>
 
@@ -39,6 +40,7 @@
                                         <td>{{ $candidateshow->strength}}</td>
                                         <td>{{ $candidateshow->cgpa}}</td>
                                         <td>{{ $candidateshow->faculty}}</td>
+                                        <td>{{ $candidateshow->elecarea}}</td>
                                         <td>{{ $candidateshow->status}}</td>
 
                                         <td>
