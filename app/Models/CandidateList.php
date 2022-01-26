@@ -16,6 +16,8 @@ class CandidateList extends Model
             'strength',
             'cgpa',
             'faculty',
+            'party',
+            'elecarea',
             'status',
             'image',
             'votes_count'

@@ -27,7 +27,8 @@ class HomeController extends Controller
         $ongores=DB::table('candidate_lists')->where('status', '=', "Approved")
         ->get()
         ->sortByDesc('votes_count');
-        $piechartres=DB::table('candidate_lists')->where('status', '=', "Approved")
+        $piechartres=DB::table('candidate_lists')->select('party','votes_count')->distinct()
+        ->where('status', '=', "Approved")
         ->get();
 
     $chartData="";

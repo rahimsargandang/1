@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CandidateList;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ApplicationController extends Controller
 {
@@ -20,9 +21,18 @@ class ApplicationController extends Controller
 
     public function index()
     {
-        //
-        $candidate_lists = CandidateList::all();
-        return view('applications.index')->with(compact('candidate_lists'));
+
+        if(!Auth::user()->has_apply){
+
+            $candidate_lists = CandidateList::all();
+            return view('applications.index')->with(compact('candidate_lists'));
+
+        }else{
+
+            return redirect('home')->with('flashMessageProblem','You have already apply! You only can vote apply to become candidate once!');
+
+
+        }
     }
 
     /**

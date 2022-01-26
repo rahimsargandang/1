@@ -51,7 +51,7 @@
                                   <td>{{ $candidate_search->matricnum }}</td>
                                   <td>{{ $candidate_search->party }}</td>
                                   <td> 
-                                      <img src="{{ asset('storage/'.$candidate_search->image) }}" width="70px" height="70px" alt="Image">
+                                      <img src="{{ asset('storage/'.$candidate_search->image) }}" width="100px" height="100px" alt="Image">
                                   </td>
                                   <td>
                                     <div class="row mb-0">
@@ -73,8 +73,10 @@
                                       </thead> -->
 
                                     <tbody>
+                                    <div class="mb-2">
+                                    <img src="{{ asset('storage/'.$candidate_search->image) }}" width="100px" height="100px" alt="Image">
+                                    </div>
 
-                                      {{ $candidate_search->image }}
                                       <tr>
                                         <th scope="col">Name</th>
                                         <td>{{ $candidate_search->name }}</td>

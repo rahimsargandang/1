@@ -145,7 +145,7 @@
 
                             <div class="col-md-6">
           
-                                <select class="form-select" id="area" name="area" >
+                                <select class="form-select" id="elecarea" name="elecarea" >
                                 <option selected>Select Electoral Area</option>
                                 <option value="Umum">Umum</option>
                                 <option value="Fakulti">Fakulti</option>
@@ -158,24 +158,7 @@
                                 @enderror
                                 </div>
   </div>
-  <div class="row mb-3">
-                            <label for="year" class="col-md-4 col-form-label text-md-right">{{ __('Year') }}</label>
 
-                            <div class="col-md-6">
-          
-                                <select class="form-select" id="year" name="year" >
-                                <option selected>Select Year Category</option>
-                                <option value="1/2">1/2</option>
-                                <option value="3/4">3/4</option>
-                            </select>
-
-                                @error('year')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                </div>
-  </div>
   <div class="row mb-3">
                             <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
                             <div class="col-md-6">

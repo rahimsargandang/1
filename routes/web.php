@@ -49,6 +49,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::middleware('auth')->group(function () {
 //     Route::get('/{applications}', \App\Http\Controllers\ApplicationController::class)->name('application');
 // });
+
+
 Route::get('/admin/candidateinfo', 'App\Http\Controllers\AdminController@cinfo')->name('candidateinfo');
 Route::get('/admin/candidateinfo', 'App\Http\Controllers\candidateListController@appcandidate')->name('appcandidate');
 
@@ -68,7 +70,6 @@ Route::resource('candidate','App\Http\Controllers\candidateListController');
 
 Route::get('/admin/approvecandidate', 'App\Http\Controllers\candidateListController@index')->name('index');
 
-
 Route::get('/approved/{id}', 'App\Http\Controllers\candidateListController@approved')->name('approved');
 
 Route::get('/rejected/{id}', 'App\Http\Controllers\candidateListController@rejected')->name('rejected');
@@ -78,4 +79,3 @@ Route::post('/castVote',[candidateListController::class, 'castVote'])->name('cas
 Route::get('/search','App\Http\Controllers\SearchController@search')->name('search');
 
 Route::get('/imagepreview', [candidateListController::class, 'imagepreview'])->name('imagepreview');
-
