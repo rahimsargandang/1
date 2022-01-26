@@ -39,11 +39,11 @@
 <div class="container">
 
     <div class="row">
-        <div class="text-center">
-            <img  src="https://www.ukm.my/pkk//wp-content/logo/en/Alternatelogo_blacktext.png" width="800"  >
-
+        <div class=" col text-center">
+            
+            <div class="mt-7 display-3 text-center">PARTY</div>
             <html>
-  <head>
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
@@ -63,30 +63,17 @@
         chart.draw(data, options);
       }
     </script>
-  </head>
-  <body>
+  
+  
   <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-6">
-    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-  </body>
-</html>
-
-        </div>
-        <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-  </body>
-</html>
-
-
-        
-<div class="row">
-<div class="card">
-              <div class="card-header">
+        <div class="mt-5 row">
+        <div class="col-sm-5  card">
+              <div class=" card-header">
                 <h3 class="card-title">Condensed Full Width Table</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <table class="table table-sm">
+                <table class="table table">
                   <thead>
                     <tr>
                       <th style="width: 10px">#</th>
@@ -140,11 +127,241 @@
                 </table>
               </div>
               <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-</div>
+              </div>
+
+
+          <div class="col-sm-6">
+    <div id="piechart_3d" style="width: 900px; height: 300px;"></div>
+  
+</html>
+
+        </div>
+        <div id="piechart_3d" style="width: 900px; height: 300px;"></div>
+  
+</html>
+</div></div>
+
+        
+
+
+
+<!-- /Fakulti -->
+<div class=" mt-7 display-3 text-center">FAKULTI</div>
+<div class="container">
+
+    <div class="row">
+        <div class=" col text-center">
+
+
+            <html>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            <?php echo $arr['chartData']?>
+        ]);
+
+        var options = {
+          title: 'On-going Election Votes by Party',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d1'));
+        chart.draw(data, options);
+      }
+    </script>
+  
+  
+  <div class="container-fluid">
+        <div class="mt-5 row">
+        <div class="col-sm-5  card">
+              <div class=" card-header">
+                <h3 class="card-title">Condensed Full Width Table</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table table">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Task</th>
+                      <th>Progress</th>
+                      <th style="width: 40px">Label</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>Update software</td>
+                      <td>
+                        <div class="progress progress-xs">
+                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-danger">55%</span></td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td>Clean database</td>
+                      <td>
+                        <div class="progress progress-xs">
+                          <div class="progress-bar bg-warning" style="width: 70%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-warning">70%</span></td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td>Cron job running</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-primary" style="width: 30%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-primary">30%</span></td>
+                    </tr>
+                    <tr>
+                      <td>4.</td>
+                      <td>Fix and squish bugs</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-success" style="width: 90%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-success">90%</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              </div>
+
+
+          <div class="col-sm-6">
+    <div id="piechart_3d1" style="width: 900px; height: 300px;"></div>
+  
+</html>
+
+        </div>
+        <div id="piechart_3d1" style="width: 900px; height: 300px;"></div>
+  
+</html>
+</div></div>
+
+
+
+<div class=" mt-7 display-3 text-center">UMUM</div>
+<!-- /Umumi -->
+<div class="container">
+
+    <div class="row">
+        
+
+
+            <html>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            <?php echo $arr['chartData']?>
+        ]);
+
+        var options = {
+          title: 'On-going Election Votes by Party',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d11'));
+        chart.draw(data, options);
+      }
+    </script>
+  
+  
+  <div class="container-fluid">
+        <div class="mt-5 row">
+        <div class="col-sm-5  card">
+              <div class=" card-header">
+                <h3 class="card-title">Condensed Full Width Table</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table table">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Task</th>
+                      <th>Progress</th>
+                      <th style="width: 40px">Label</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>Update software</td>
+                      <td>
+                        <div class="progress progress-xs">
+                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-danger">55%</span></td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td>Clean database</td>
+                      <td>
+                        <div class="progress progress-xs">
+                          <div class="progress-bar bg-warning" style="width: 70%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-warning">70%</span></td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td>Cron job running</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-primary" style="width: 30%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-primary">30%</span></td>
+                    </tr>
+                    <tr>
+                      <td>4.</td>
+                      <td>Fix and squish bugs</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-success" style="width: 90%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-success">90%</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              </div>
+
+
+          <div class="col-sm-6">
+    <div id="piechart_3d11" style="width: 900px; height: 300px;"></div>
+  
+</html>
+
+        </div>
+        <div id="piechart_3d11" style="width: 900px; height: 300px;"></div>
+  
+</html>
+</div></div>
+
+
   
 
 
