@@ -138,7 +138,6 @@ class candidateListController extends Controller
        
 
        $candidateId = $request ->input('candidateId');
-       
 
        foreach($candidateId as $cid){
        DB::table('candidate_lists')->where('id',$cid)

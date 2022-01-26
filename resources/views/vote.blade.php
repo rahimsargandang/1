@@ -144,7 +144,7 @@
                     <td ><div class="mt-5 mb-4">{{$candidateU->party}}</div></td>
                     <td><div class="form-check mb-4 mt-5">
                         <label class="form-check-label" for="defaultCheck1">
-                        <input class="form-check-input" type="checkbox" name="candidate2Id[]" value="{{$candidate->id}}" id="candidate2Id[]" onclick="return v2limit()">
+                        <input class="form-check-input" type="checkbox" name="candidateId[]" value="{{$candidateU->id}}" id="candidate2Id[]" onclick="return v2limit()">
                         </label>
                         </div>
                     </td>

@@ -41,8 +41,8 @@ class HomeController extends Controller
         ->where('elecarea', '=', "Umum")
         ->get()
         ->sortByDesc('votes_count'); 
-        $piechartres=DB::table('candidate_lists')->select('party','votes_count')->distinct()
-        ->where('status', '=', "Approved")
+        $piechartres=DB::table('candidate_lists')->select('party', DB::raw( 'SUM(votes_count) as votes_count'))
+        ->groupBy('party')
         ->get();
         $piechartres2=DB::table('candidate_lists')->select('name','votes_count')->distinct()
         ->where('elecarea', '=', "Fakulti")
