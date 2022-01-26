@@ -12,6 +12,7 @@
 
                 <h3 class="mt-3 mb-5">VOTE CANDIDATE</h3>
 
+                <div class="mt-7 display-3 text-center">FACULTY</div>
                 <table class="table table-bordered">
                 <thead class="table-light">
                 <div class="card text-dark bg-info mb-3" style="max-width: 35rem;">
@@ -98,7 +99,7 @@
                 </tbody>
                 </table>
 
-
+                <div class="mt-7 display-3 text-center">PUBLIC</div>
                 <table class="table table-bordered">
                 <thead class="table-light">
                 <div class="card text-dark bg-info mb-3" style="max-width: 35rem;">
@@ -136,11 +137,11 @@
 
                 <tbody>
 
-                @foreach($candidates as $candidate)
+                @foreach($candidatesU as $candidateU)
                 <tr>
                     <td><img src="{{ asset('storage/'.$candidate->image)}}" width="150px" height="150px"alt="image"></td>
-                    <td ><div class="mt-5 mb-4">{{$candidate->name}}</div></td>
-                    <td ><div class="mt-5 mb-4">{{$candidate->party}}</div></td>
+                    <td ><div class="mt-5 mb-4">{{$candidateU->name}}</div></td>
+                    <td ><div class="mt-5 mb-4">{{$candidateU->party}}</div></td>
                     <td><div class="form-check mb-4 mt-5">
                         <label class="form-check-label" for="defaultCheck1">
                         <input class="form-check-input" type="checkbox" name="candidate2Id[]" value="{{$candidate->id}}" id="candidate2Id[]" onclick="return v2limit()">

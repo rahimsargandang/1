@@ -117,8 +117,11 @@ class candidateListController extends Controller
         else if(!Auth::user()->has_voted){
 
 
-            $candidates = DB::table('candidate_lists')->where('status', '=', "Approved")->get();
-            return view('vote',['candidates'=> $candidates]);
+            $candidates = DB::table('candidate_lists')->where('status', '=', "Approved")->where('elecarea', '=', "Fakulti")->get();
+            
+
+            $candidatesU = DB::table('candidate_lists')->where('status', '=', "Approved")->where('elecarea', '=', "Umum")->get();
+            return view('vote',['candidatesU'=> $candidatesU],['candidates'=> $candidates]);
 
         }else{
 
@@ -168,10 +171,13 @@ class candidateListController extends Controller
 
     public function elecres(){
 
-        $elecres=DB::table('candidate_lists')->where('status', '=', "Approved")
+        $elecres=DB::table('candidate_lists')->where('status', '=', "Approved")->where('elecarea', '=', "Umum")
             ->get()
             ->sortByDesc('votes_count');
-        return view('admin.electionresult')->with(compact('elecres'));
+        $elecresF=DB::table('candidate_lists')->where('status', '=', "Approved")->where('elecarea', '=', "Fakulti")
+            ->get()
+            ->sortByDesc('votes_count');
+        return view('admin.electionresult',['elecres'=> $elecres],['elecresF'=> $elecresF]);
 
     }
 
