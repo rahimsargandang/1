@@ -68,9 +68,6 @@
                                       </div>
                                       <div class="modal-body">
                                       <table class="table table-bordered table-striped">
-                                      <!-- <thead>
-                                      <td>{{ $candidate_search->image }}</td>
-                                      </thead> -->
 
                                     <tbody>
                                     <div class="mb-2">

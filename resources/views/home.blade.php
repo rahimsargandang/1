@@ -69,60 +69,32 @@
         <div class="mt-5 row">
         <div class="col-sm-5  card">
               <div class=" card-header">
-                <h3 class="card-title">Condensed Full Width Table</h3>
+                <h3 class="card-title">On-going Election by Party</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <table class="table table">
                   <thead>
                     <tr>
-                      <th style="width: 10px">#</th>
-                      <th>Task</th>
+
+                      <th>Party</th>
                       <th>Progress</th>
-                      <th style="width: 40px">Label</th>
+                      <th style="width: 40px">Votes</th>
                     </tr>
                   </thead>
                   <tbody>
+                  @foreach ($ongores as $show)
                     <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
+                      <td>{{ $show->party}}</td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{$show->votes_count}}%"></div>
                         </div>
                       </td>
-                      <td><span class="badge bg-danger">55%</span></td>
+                      <td>{{ $show->votes_count}}</td>
+                      @endforeach
                     </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-warning" style="width: 70%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-warning">70%</span></td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-primary" style="width: 30%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-primary">30%</span></td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-success" style="width: 90%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-success">90%</span></td>
-                    </tr>
+                      
                   </tbody>
                 </table>
               </div>
@@ -146,7 +118,7 @@
 
 
 <!-- /Fakulti -->
-<div class=" mt-7 display-3 text-center">FAKULTI</div>
+<div class=" mt-7 display-3 text-center">FACULTY</div>
 <div class="container">
 
     <div class="row">
@@ -162,11 +134,11 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            <?php echo $arr['chartData']?>
+            <?php echo $arr2['chartData2']?>
         ]);
 
         var options = {
-          title: 'On-going Election Votes by Party',
+          title: 'On-going Election Votes by Fakulty Category',
           is3D: true,
         };
 
@@ -180,60 +152,35 @@
         <div class="mt-5 row">
         <div class="col-sm-5  card">
               <div class=" card-header">
-                <h3 class="card-title">Condensed Full Width Table</h3>
+                <h3 class="card-title">On-going Election by Faculty </h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <table class="table table">
+              <table class="table table">
                   <thead>
                     <tr>
-                      <th style="width: 10px">#</th>
-                      <th>Task</th>
+                      <th>Name</th>
+                      <th>Election area</th>
+                      <th>Faculty</th>
                       <th>Progress</th>
-                      <th style="width: 40px">Label</th>
+                      <th style="width: 40px">Votes</th>
                     </tr>
                   </thead>
                   <tbody>
+                  @foreach ($elecfac as $show)
                     <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
+                      <td>{{ $show->name}}</td>
+                      <td>{{ $show->elecarea}}</td>
+                      <td>{{ $show->faculty}}</td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{$show->votes_count}}%"></div>
                         </div>
                       </td>
-                      <td><span class="badge bg-danger">55%</span></td>
+                      <td>{{ $show->votes_count}}</td>
+                      @endforeach
                     </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-warning" style="width: 70%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-warning">70%</span></td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-primary" style="width: 30%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-primary">30%</span></td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-success" style="width: 90%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-success">90%</span></td>
-                    </tr>
+                      
                   </tbody>
                 </table>
               </div>
@@ -254,7 +201,7 @@
 
 
 
-<div class=" mt-7 display-3 text-center">UMUM</div>
+<div class=" mt-7 display-3 text-center">PUBLIC</div>
 <!-- /Umumi -->
 <div class="container">
 
@@ -271,11 +218,11 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            <?php echo $arr['chartData']?>
+            <?php echo $arr3['chartData3']?>
         ]);
 
         var options = {
-          title: 'On-going Election Votes by Party',
+          title: 'On-going Election Votes by Public Category',
           is3D: true,
         };
 
@@ -289,60 +236,35 @@
         <div class="mt-5 row">
         <div class="col-sm-5  card">
               <div class=" card-header">
-                <h3 class="card-title">Condensed Full Width Table</h3>
+                <h3 class="card-title">On-going Election Votes by Public</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <table class="table table">
+              <table class="table table">
                   <thead>
                     <tr>
-                      <th style="width: 10px">#</th>
-                      <th>Task</th>
+                      <th>Name</th>
+                      <th>Election area</th>
+                      <th>Faculty</th>
                       <th>Progress</th>
-                      <th style="width: 40px">Label</th>
+                      <th style="width: 40px">Votes</th>
                     </tr>
                   </thead>
                   <tbody>
+                  @foreach ($elecpub as $show)
                     <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
+                      <td>{{ $show->name}}</td>
+                      <td>{{ $show->elecarea}}</td>
+                      <td>{{ $show->faculty}}</td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{$show->votes_count}}%"></div>
                         </div>
                       </td>
-                      <td><span class="badge bg-danger">55%</span></td>
+                      <td>{{ $show->votes_count}}</td>
+                      @endforeach
                     </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-warning" style="width: 70%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-warning">70%</span></td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-primary" style="width: 30%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-primary">30%</span></td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-success" style="width: 90%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-success">90%</span></td>
-                    </tr>
+                      
                   </tbody>
                 </table>
               </div>
@@ -359,10 +281,7 @@
         <div id="piechart_3d11" style="width: 900px; height: 300px;"></div>
   
 </html>
-</div></div>
-
-
-  
-
+</div>
+</div>
 
 @endsection
