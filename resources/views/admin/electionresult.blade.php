@@ -17,10 +17,9 @@
                                 <thead class="table-light">
 
                                 <tr>
-                                    <th class="border-top-0" scope="col">No.</th>
                                     <th class="border-top-0" scope="col">Image</th>
-                                    <th class="border-top-0" scope="col">Name</th>
-                                    <th class="border-top-0" scope="col">Matric Number</th>
+                                    <th class="border-top-0" scope="col"style="width: 200px">>Name</th>
+                                    <th class="border-top-0" scope="col"style="width: 150px">>Matric Number</th>
                                     <th class="border-top-0" scope="col">Faculty</th>
                                     <th class="border-top-0" scope="col">Party</th>
                                     <th class="border-top-0" scope="col" style="width: 600px">Voting Progress</th>
@@ -32,7 +31,6 @@
                                 <tbody>
                             @foreach ($elecres as $show)
                                     <tr>
-                                        <td>{{ $show->id}}</td>
                                         <td><img src="{{ asset('storage/'.$show->image)}}" width="100px" height="100px"alt="Image"></td>
                                         <td>{{ $show->name}}</td>
                                         <td>{{ $show->matricnum}}</td>
@@ -61,10 +59,9 @@
                                 <thead class="table-light">
 
                                 <tr>
-                                    <th class="border-top-0" scope="col">No.</th>
                                     <th class="border-top-0" scope="col">Image</th>
-                                    <th class="border-top-0" scope="col">Name</th>
-                                    <th class="border-top-0" scope="col">Matric Number</th>
+                                    <th class="border-top-0" scope="col"style="width: 200px">Name</th>
+                                    <th class="border-top-0" scope="col"style="width: 150px">Matric Number</th>
                                     <th class="border-top-0" scope="col">Faculty</th>
                                     <th class="border-top-0" scope="col">Party</th>
                                     <th class="border-top-0" scope="col" style="width: 600px">Voting Progress</th>
@@ -76,7 +73,6 @@
                                 <tbody>
                             @foreach ($elecresF as $showF)
                                     <tr>
-                                        <td>{{ $showF->id}}</td>
                                         <td><img src="{{ asset('storage/'.$showF->image)}}" width="100px" height="100px"alt="Image"></td>
                                         <td>{{ $showF->name}}</td>
                                         <td>{{ $showF->matricnum}}</td>

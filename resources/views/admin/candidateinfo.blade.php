@@ -36,8 +36,6 @@
                                         <td><img src="{{ asset('storage/'.$show->image)}}" width="100px" height="100px"alt="image"></td>
                                         <td>{{ $show->name}}</td>
                                         <td>{{ $show->matricnum}}</td>
-                                        <!-- <td>{{ $show->strength}}</td>
-                                        <td>{{ $show->cgpa}}</td> -->
                                         <td>{{ $show->faculty}}</td>
                                         <td>{{ $show->status}}</td>
                                         <td>
@@ -56,7 +54,7 @@
 
                                             <tbody>
                                                 <div class="mb-2">
-                                                <img src="{{ asset('storage/'.$show->image) }}" width="100px" height="100px" alt="Image">
+                                                <img src="{{ asset('storage/'.$show->image) }}" width="200px" height="200px" alt="Image">
                                             </div>
 
                                             <tr>

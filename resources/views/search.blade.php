@@ -71,7 +71,7 @@
 
                                     <tbody>
                                     <div class="mb-2">
-                                    <img src="{{ asset('storage/'.$candidate_search->image) }}" width="100px" height="100px" alt="Image">
+                                    <img src="{{ asset('storage/'.$candidate_search->image) }}" width="200px" height="200px" alt="Image">
                                     </div>
 
                                       <tr>

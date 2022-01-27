@@ -24,7 +24,7 @@
                                     <th >Strength</th>
                                     <th >CGPA</th>
                                     <th >Faculty</th>
-                                    <th >Election Area</th>
+                                    <th >Electoral Area</th>
                                     <th >Status</th>
                                     <th >Action</th>
 
