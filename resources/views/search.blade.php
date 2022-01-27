@@ -94,6 +94,10 @@
                                         <th scope="row">Party</th>
                                         <td colspan="1">{{ $candidate_search->party }}</td>
                                     </tr>
+                                    <tr>
+                                        <th scope="row">Electoral Area</th>
+                                        <td>{{ $candidate_search->elecarea}}</td>
+                                    </tr>
 
                                     </tbody>
 
